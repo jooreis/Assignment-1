@@ -1,0 +1,13 @@
+#Program will give a plot for the formula y=2*cos(x) with x between -10 and 10, so have to import the math and pyplot packages. 
+import math
+import matplotlib.pyplot as plt
+x=[] #For the two axisses I create two emty lists that will be filled with the integers from the formula
+y=[]
+for i in range(-10,11,1): #Create a range that contains x between -10 and 10 with increments of 1
+    x+=[i] #append the list with x and y values
+    y+=[(2*math.cos(i))]
+plt.plot(x,y, marker='o', linestyle='--', color='r') #Create plot with the x and y values and line styles
+plt.xlabel('X')
+plt.ylabel('Y', rotation=0)
+plt.title('y=2*cos(x)') #label the axisses and give title
+plt.show()
