@@ -1,0 +1,23 @@
+#The file downloaded from cBio take the frequency of different mutation types
+import matplotlib.pyplot as plt #import packages that are required for the plot
+import numpy as np
+file1=open("thca_tcga_pub_thca_tcga_pub_mutations.txt", "r") #import file from cBio (unfortunally I only know how to do it munually)
+raw=file1.read() #make string from file
+lower=raw.split("673") #I only want the mutation part, not the IDs. So I split it at the transition site
+mutation=lower[1] #I only want the mutation part, not the IDs, so I take the second part
+correct=mutation.split("\t") #Make list of all the mutation, so I split at the separator. 
+dictionary={} #Create empty dictionary, so I can count the different mutations 
+for item in correct:
+    if item in dictionary: #Count all the mutations that accur in the list and add that to dictionary
+        dictionary[item] +=1
+    else:
+        dictionary[item]=1
+X = np.arange(len(dictionary)) #Turn keys into numerical length
+plt.bar(X, dictionary.values(), width=0.5) #Plot keys on x-axis
+plt.xticks(X, dictionary.keys(),fontsize=10, rotation=30) #Put ticks on x-axis
+ymax = max(dictionary.values()) + 25 #Determine y range by values 
+plt.ylim(0, ymax)
+plt.xlabel('Mutation type')
+plt.ylabel('Frequency', rotation=0) #Add labels and title to plot
+plt.title("BRAF mutations")
+plt.show()
