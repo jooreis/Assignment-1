@@ -1,0 +1,11 @@
+CREATE TABLE Patient 
+(PatientID int,
+GenoType varchar(3)
+);
+
+CREATE TABLE Mutation
+(MutationID int
+GenomicLocation int
+Mutation varchar(8) 
+PatientID int
+);
