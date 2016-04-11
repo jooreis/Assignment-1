@@ -1,0 +1,6 @@
+SELECT * 
+from Customers 
+  INNER JOIN Orders 
+    On Customers.CustomerID=Orders.CustomerID
+  INNER JOIN OrderDetails 
+    ON Orders.OrderID=OrderDetails.OrderID where OrderDetails.ProductID=31
