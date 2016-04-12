@@ -1,0 +1,25 @@
+Assignment1
+from pymongo import MongoClient
+client = MongoClient('localhost', 27017)
+db = client.PIK3CA 
+counter=0
+cursor = db.vcf.find()
+for document in cursor:
+    subset = ((document["rec"]["ann"]))
+    for item in subset:
+        thing=item.split("|")[6]
+        if thing == "ENST00000263967":
+            counter+=1
+print counter
+
+Assignment2
+from pymongo import MongoClient
+client = MongoClient('localhost', 27017)
+db = client.PIK3CA 
+dp=[]
+cursor = db.vcf.find()
+for document in cursor:
+    subset = ((document["rec"]["samples"]))
+    if subset[2]>7 and subset[3]>7:
+        dp.append(subset[2:4])
+print len(dp)
