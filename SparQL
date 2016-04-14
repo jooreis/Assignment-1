@@ -1,0 +1,57 @@
+#my database, containing 6 animals with their taxonomical rang as subjects. 
+@prefix : <http://biobeat.org/rdf/ns#> . 
+:Human
+  :name "Human";
+  :latin "Homo_sapiens" ;
+  :class "mammal" ;
+  :order "primate" ;
+  :family "homidae" ;
+  :genus "homo".
+:Chimp
+  :name "Chimp";
+  :latin "Pan_troglodytes" ;
+  :class "mammal" ;
+  :order "primate" ;
+  :family "homidae" ;
+  :genus "pan".
+:Gorilla
+  :name "Gorilla";
+  :latin "Gorilla_gorilla" ;
+  :class "mammal" ;
+  :order "primate" ;
+  :family "homidae" ;
+  :genus "gorilla".
+:Magpie
+  name "Magpie";
+  :latin "Pica_pica" ;
+  :class "aves" ;
+  :order "passeriformes" ;
+  :family "corvidae" ;
+  :genus "pica".
+:Platypus
+  name "Platypus";
+  :latin "Ornithorhynchus_anatinus" ;
+  :class "mammal" ;
+  :order "monotremata" ;
+  :family "ornithorhynchidae" ;
+  :genus "ornithorhynchus".
+:Cat
+  name "Cat";
+  :latin "Felis_catus" ;
+  :class "mammal" ;
+  :order "carnivora" ;
+  :family "felidae" ;
+  :genus "felis".
+  
+#Next I querry with the following command, that will select all the mammals, then primates and excludes the genus "pan"
+
+PREFIX : <http://biobeat.org/rdf/ns#>
+SELECT (COUNT(?o) AS ?count)
+WHERE
+{ ?o :class "mammal".
+ ?o :order "primate".
+   ?o :genus ?s.
+FILTER(! regex( ?s,"pan", "i"))
+}
+
+#A counter will show that there are two entries left; Human and Gorilla 
