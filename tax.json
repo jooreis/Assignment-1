@@ -7,17 +7,17 @@
     {
      "name": "Primates",
      "children": [
-      {"name": "Human", "size": 3938},
-      {"name": "Chimp", "size": 3812},
-      {"name": "Gorilla", "size": 6714},
-      {"name": "Urang-Utang", "size": 743}
+      {"name": "Human"},
+      {"name": "Chimp"},
+      {"name": "Gorilla"},
+      {"name": “Orangutan"}
      ]
     },
     {
      "name": "Monotrema",
      "children": [
-      {"name": "Platypus", "size": 3534},
-      {"name": "Echidna", "size": 5731}
+      {"name": "Platypus"},
+      {"name": "Echidna"}
      ]
     },
     {
