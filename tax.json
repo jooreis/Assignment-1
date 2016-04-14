@@ -23,7 +23,10 @@
     {
      "name": "Felidae",
      "children": [
-      {"name": "Cat", "size": 7074}
+      {"name": "Cat",
+     "children": [
+     {"name":"Felis"}] },
+      {"name": "Lynx"}
      ]
     }
    ]
